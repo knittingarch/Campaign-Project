@@ -1,0 +1,360 @@
+/*  Highlight colors
+Pomegranate: #c0392b
+Wet Asphalt: #34495e
+*/
+
+/*-------------------------------------*/
+/* BASIC SETUP */
+/*-------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    color: #eee;
+    font-family: 'JosefinSans', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 0 auto;
+    text-rendering: optimizeLegibility;
+}
+
+
+/*  FONTS  */
+
+@font-face {
+    font-family: JosefinSlab;
+    src: url(/vendors/fonts/JosefinSlab-Regular.ttf);
+}
+
+@font-face {
+    font-family: JosefinSans;
+    src: url(/vendors/fonts/JosefinSans-Regular.ttf);
+}
+
+
+/*  GENERAL TYPOGRAPHY  */
+
+p {
+    line-height: 135%;
+    padding: 10px 25px;
+}
+
+/*  LINKS  */
+
+a:link, a:visited {
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 5px;
+    color: #555;
+    transition: color 0.2s;
+}
+
+a:hover, a:active {
+    background-color: #c0392b;
+    padding: 5px;
+    color: #fff;
+}
+
+
+/*  HEADERS  */
+
+h1, h2, h3, h4, h5 {
+    font-family: JosefinSlab;
+    line-height: 155%;
+    padding-left: 25px;
+}
+
+
+h1 {
+    font-size: 300%;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+h3 {
+    font-size: 150%;
+}
+
+
+/*  ICONS  */
+
+.giant-icon {
+    font-size: 800%;
+    overflow: hidden;
+    color: #999;
+}
+
+.star {
+    position: relative;
+    top: 0px;
+    left: 85%;
+/*    float: left;*/
+}
+
+.yes {
+    position: relative;
+    top: 25px;
+    right: 25px;
+    float: left;
+}
+
+.no {
+    position: relative;
+    top: 25px;
+    left: 25px;
+    float: right;
+}
+
+a.icon {
+    color: #fff;
+}
+
+a.icon-candi {
+    color: #fff;
+}
+
+a.icon-candi:hover {
+    color: #fff;
+    background-color: #34495e;
+}
+
+/*  NAVIGATION Section  */
+
+#sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    position: relative;
+    height: 40px;
+    color: #555;
+}
+
+nav ul.menu {
+    width: 30%;
+    float: right;
+}
+
+nav ul.menu li {
+    display: inline-block;
+    float: right;
+    padding: 14px 5px 7px 5px;
+    font-size: 90%;
+    letter-spacing: 1px;
+}
+
+nav ul.menu li:first-child {
+/*    margin-right: 15px;*/
+}
+
+
+/*  INTRO Section  */
+
+.intro {
+    position: relative;
+    background-color: #34495e;
+    color: #eee;
+    padding: 5px 5px 50px 5px;
+    }
+
+.intro p {
+    width: 75%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+
+div.pairs {
+    width: 90%;
+    margin: 0 auto;
+}
+
+div.pairs ul {
+    text-align: center;
+    padding-top: 25px;
+}
+
+div.pairs ul li {
+    display: block;
+    padding: 10px;
+    list-style-type: none;
+    font-size: 80%;
+}
+
+div.pairs ul li a:link, div.pairs ul li a:visited {
+    color: #fff;
+    transition: color 0.2s;
+}
+
+div.pairs ul li a:hover, div.pairs ul li  a:active {
+    background-color: #34495e;
+    text-decoration: underline;
+    color: #eee;
+}
+
+/*  POLL Section  */
+
+#poll-top {
+    position: relative;
+}
+
+.poll {
+    position: relative;
+    width: 100%;
+    background-color: #ddd;
+    color: #555;
+    padding: 5px 5px 100px 5px;
+    margin: 0;
+    }
+
+.poll-question {
+    width: 50%;
+    margin: 0 auto;
+    border: 2px solid #eee;
+    margin-top: 75px;
+}
+
+h2.poll-header {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+form.poll-options {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.poll input {
+    height: 20px;
+    width: 50px;
+    color: #555;
+    transition: color 0.1s;
+}
+
+.poll input[type="submit"] {
+    color: #555;
+}
+
+.poll input[type="submit"]:hover {
+    background-color: #34495e;
+    color: #eee;
+}
+
+.poll label {
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+    line-height: 150%;
+    text-align: left;
+    margin-right:15px;
+}
+
+.poll input.vote {
+    display: block;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    height: 30px;
+    width: 100px;
+    background-color: #eee;
+    border: 1px solid #fff;
+    border-radius: 0.5em;
+    text-transform:uppercase;
+    font-weight: 600;
+    color: #444;
+}
+
+
+/*  CRITERIA BOX Section  */
+
+.criteria-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 300px;
+    padding: 10px;
+    background-color: #333;
+    font-size: 85%;
+    color: #ddd;
+/*    border-radius: 5px 0px 0px 5px;*/
+    float: right;
+    }
+
+.criteria-box h3 {
+    text-align: center;
+}
+
+.criteria-box li {
+    line-height: 150%;
+}
+
+.criteria-box li span {
+    position: relative;
+    left: 20px;
+}
+
+/*  CANDIDATES Section  */
+
+#candi-top {
+    position: relative;
+}
+
+.candidates {
+    position: relative;
+    background-color: #c0392b;
+    color: #eee;
+    padding: 5px;
+    margin: 0;
+    }
+
+.span_1_of_6 a {
+    margin: 0;
+    padding: 0;
+}
+
+.span_1_of_6 img {
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    height: 100px;
+    border: 2px solid #eee;
+    -webkit-filter: grayscale(100%);  Chrome, Safari, Opera
+    filter: grayscale(100%);
+    }
+
+.span_1_of_6 img:hover {
+    -webkit-filter: none;  Chrome, Safari, Opera
+    filter: none;
+    -webkit-transition-duration: 1s;
+    transition-duration: 2s;
+}
+
+.span_1_of_6 p {
+    text-align: center;
+    margin-top: -10px;
+    padding-bottom: 10px;
+    font-size: 85%;
+}
+
+
+/*  FOOTER Section  */
+
+.footer {
+    background-color: #eee;
+    color: #333;
+    padding: 10px;
+    font-size: 75%;
+    text-align: center;
+    }

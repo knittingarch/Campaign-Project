@@ -1,0 +1,207 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- HTML5 Boilerplate -->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>Campaign Team Project</title>
+
+        <meta name="description" content="This is a Campaign Team Project created by Cindy Guanci, Latin teacher at River Bluff High School in Columbia, South Carolina.  The project pairs Roman emperors and US candidates for presidents and has them run for 'Consuls of the Empire.'">
+        <meta name="keywords" content="roman, latin, president, candidates, election, campaign, emperor">
+        <meta name="author" content="knittingarch.wordpress.com">
+
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="shortcut icon" href="/favicon.ico">
+
+        <!-- Responsive and mobile friendly stuff -->
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="{% static 'poll/html5reset.css' %}" media="all">
+        <link rel="stylesheet" href="{% static 'poll/col.css' %}" media="all">
+        <link rel="stylesheet" href="{% static 'poll/2cols.css' %}" media="all">
+        <link rel="stylesheet" href="{% static 'poll/3cols.css' %}" media="all">
+        <link rel="stylesheet" href="{% static 'poll/6cols.css' %}" media="all">
+
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'poll/style.css' %}" />
+
+    </head>
+
+    <body>
+
+<!-- INTRO HEADER -->
+
+        <nav id="sticky top">
+            <ul class="menu">
+                <li><a href="#candi-top">candidates</a></li>
+                <li><a href="#poll-top">poll</a></li>
+            </ul>
+
+        </nav>
+        <div class="section group intro">
+            <div class="col span_1_of_1">
+<!--                <a class="giant-icon star ion-asterisk"></a>-->
+                <h1>Campaign Team Project</h1>
+                <span class="yes giant-icon ion-thumbsup"></span>
+<!--                <span class="no giant-icon ion-thumbsdown"></span>-->
+                <p>If it's not what you want - stop and change it. Don't just keep going and expect it will get better. You can do anything here. So don't worry about it. God gave you this gift of imagination. Use it.</p>
+
+                <p>You can get away with a lot. Talk to trees, look at the birds. Whatever it takes. We'll throw some old gray clouds in here just sneaking around and having fun. I'll go over the colors one more time that we use: Titanium white, Thalo green, Prussian blue, Van Dyke brown, Alizarin crimson, Sap green, Cad yellow, and Permanent red.</p>
+            </div>
+
+            <div class="section group pairs">
+                <div class="col span_1_of_3">
+                    <ul>
+                        <li><a href="#">Augustus Caesar &#38; Bernie Sanders</a></li>
+                        <li><a href="#">Caligula &#38; Donald Trump</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col span_1_of_3">
+                    <ul>
+                        <li><a href="#">Tiberius &#38; Jeb Bush</a></li>
+                        <li><a href="#">Trajan &#38; Hillary Clinton</a></li>
+                    </ul>
+                </div>
+
+                <div class="col span_1_of_3">
+                    <ul>
+                        <li><a href="#">Julius Caesar &#38; Martin O'Malley</a></li>
+                        <li><a href="#">Vespasian &#38; Ted Cruz</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+<!-- POLL SECTION -->
+
+        <div id="poll-top" class="section group poll">
+                <div class="poll-question">
+                    <h2 class="poll-header">Vote for Your Candidates <a href="#top" class="icon ion-arrow-up-a"></a></h2>
+
+                    {% if error_message %}
+                    <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+
+                    <p>{{ question.question_text }}</p>
+                    <form action="{% url 'vote' question.id %}" method="post">
+                        {% csrf_token %}
+                        {% for choice in question.choice_set.all %}
+                        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+                        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+                        {% endfor %}
+                        <input type="submit" value="Vote!" />
+                    </form>
+
+
+                <div class="criteria-box">
+                    <h3>Criteria</h3>
+                    <ul>
+                        <li class="ion-checkmark"><span>Criterium 1</span></li>
+                        <li class="ion-checkmark"><span>Criterium 2</span></li>
+                        <li class="ion-checkmark"><span>Criterium 3</span></li>
+                        <li class="ion-checkmark"><span>Criterium 4</span></li>
+                    </ul>
+                </div>
+        </div>
+
+
+<!-- CANDIDATE PHOTO GALLERY -->
+
+        <div id="candi-top" class="section group candidates">
+            <h2>The Candidates <a href="#top" class="icon-candi ion-arrow-up-a"></a></h2>
+        </div>
+
+        <div class="section group candidates">
+
+            <div class="col span_1_of_6">
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Augustus"><img src="img/augustus_crop.jpeg" alt="Augustus" /></a>
+                <p>Augustus</p>
+            </div>
+
+            <div class="col span_1_of_6">
+                <a target="_blank" href="https://jeb2016.com/"><img src="img/bush_crop.jpg" alt="Jeb Bush" /></a>
+                <p>Bush</p>
+            </div>
+
+            <div class="col span_1_of_6">
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Julius_Caesar"><img src="img/caesar_crop.jpg" alt="Julius Caesar"/></a>
+                <p>Caesar</p>
+            </div>
+
+            <div class="col span_1_of_6">
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Caligula"><img src="img/caligula_crop.jpg" alt="Caligula" /></a>
+                <p>Caligula</p>
+            </div>
+
+            <div class="col span_1_of_6">
+                <a target="_blank" href="https://www.hillaryclinton.com/"><img src="img/clinton_crop.jpg" alt="Hillary Clinton" /></a>
+                <p>Clinton</p>
+            </div>
+
+            <div class="col span_1_of_6">
+                <a target="_blank" href="https://www.tedcruz.org/"><img src="img/cruz_crop.jpg" alt="Ted Cruz" /></a>
+                <p>Cruz</p>
+            </div>
+
+        </div>
+
+        <div class="section group candidates">
+
+            <div class="col span_1_of_6">
+                <a target="_blank" href="https://martinomalley.com/"><img src="img/omalley_crop.jpg" alt="Martin O'Malley" /></a>
+                <p>O'Malley</p>
+            </div>
+
+            <div class="col span_1_of_6">
+                <a target="_blank" href="https://berniesanders.com/"><img src="img/sanders_crop.jpg" alt="Bernie Sanders" /></a>
+                <p>Sanders</p>
+            </div>
+
+            <div class="col span_1_of_6">
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Tiberius"><img src="img/tiberius_crop.jpg" alt="Tiberius" /></a>
+                <p>Tiberius</p>
+            </div>
+
+            <div class="col span_1_of_6">
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Trajan"><img src="img/trajan_crop.jpg" alt="Trajan" /></a>
+                <p>Trajan</p>
+            </div>
+
+            <div class="col span_1_of_6">
+                <a target="_blank" href="https://www.donaldjtrump.com/"><img src="img/trump_crop.jpg" alt="Donald Trump" /></a>
+                <p>Trump</p>
+            </div>
+
+            <div class="col span_1_of_6">
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Vespasian"><img src="img/vespasian_crop.jpg" alt="Vespasian" /></a>
+                <p>Vespasian</p>
+            </div>
+
+        </div>
+
+
+        <div class="footer group">
+            <p>Created by <a href="">Knittingarch</a> &#169; 2016</p>
+        </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+
+    </body>
+</html>
+
