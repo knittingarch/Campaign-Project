@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT campaign.wsgi:application
+web: waitress-serve --call --port=$PORT django.core.wsgi:get_wsgi_application
