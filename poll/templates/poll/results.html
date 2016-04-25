@@ -1,13 +1,53 @@
 {% load staticfiles %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'poll/style.css' %}" />
+<!DOCTYPE html>
+<html lang="en">
+<!-- HTML5 Boilerplate -->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<h1>Current Candidate Results</h1>
+        <title>Campaign Team Project</title>
 
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
+        <meta name="description" content="This is a Campaign Team Project created by Cindy Guanci, Latin teacher at River Bluff High School in Columbia, South Carolina.  The project pairs Roman emperors and US candidates for presidents and has them run for 'Consuls of the Empire.'">
+        <meta name="keywords" content="roman, latin, president, candidates, election, campaign, emperor">
+        <meta name="author" content="knittingarch.wordpress.com">
+
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="shortcut icon" href="/favicon.ico">
+
+        <!-- Responsive and mobile friendly stuff -->
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="{% static 'poll/html5reset.css' %}" media="all">
+        <link rel="stylesheet" href="{% static 'poll/col.css' %}" media="all">
+        <link rel="stylesheet" href="{% static 'poll/2cols.css' %}" media="all">
+        <link rel="stylesheet" href="{% static 'poll/3cols.css' %}" media="all">
+        <link rel="stylesheet" href="{% static 'poll/6cols.css' %}" media="all">
+
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'poll/style.css' %}" />
+
+    </head>
+
+    <body>
+        <div class="section group">
+            <div class="col span_1_of_1">
+                <h1>Current Campaign Results</h1>
+                    <ul class="candi-results">
+                        {% for choice in question.choice_set.all %}
+                        <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
 
 {% comment %}<a href="{% url 'detail' question.id %}">Vote again?</a>{% endcomment %}

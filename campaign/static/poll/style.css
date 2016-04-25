@@ -364,3 +364,14 @@ form.poll-options {
     font-size: 75%;
     text-align: center;
     }
+
+
+/*  RESULTS Page  */
+
+ul.results {
+    margin: 0, auto;
+}
+
+ul.results li {
+    line-height: 145%;
+}
