@@ -22,4 +22,10 @@ urlpatterns = patterns('',
     url(r'^', include('poll.urls')),
     url(r'^poll/', include('poll.urls')),
     url(r'^admin/', admin.site.urls),
-) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+)
+# ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if not settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    )
