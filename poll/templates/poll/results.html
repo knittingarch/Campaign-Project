@@ -43,11 +43,16 @@
         <div class="section group">
             <div class="col span_1_of_1">
                 <h1>Current Campaign Results</h1>
-                    <ul class="candi-results">
+                    <ul class="results">
                         {% for choice in question.choice_set.all %}
                         <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
                         {% endfor %}
                     </ul>
             </div>
+        </div>
+    </body>
+
+</html>
+
 
 {% comment %}<a href="{% url 'detail' question.id %}">Vote again?</a>{% endcomment %}
