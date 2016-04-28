@@ -35,17 +35,21 @@
         <link rel="stylesheet" href="{% static 'poll/6cols.css' %}" media="all">
 
         <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'poll/queries.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'poll/style.css' %}" />
 
     </head>
 
     <body>
-    <div id="candi-top" class="section group candidates">
+    <div class="section group results">
         <h1>Current Campaign Results</h1>
 
-        <ul class="results">
+        <ul class="results-list">
             {% for choice in question.choice_set.all %}
-            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+            {% comment %}{% if %}
+            <li><a class="check ion-checkmark"></a>{{ choice.choice_text }}:  <span class="highlight">{{ choice.votes }} vote{{ choice.votes|pluralize }}</span></li>
+            {% else %}{% endcomment %}
+            <li>{{ choice.choice_text }}:  <span class="highlight">{{ choice.votes }} vote{{ choice.votes|pluralize }}</span></li>
             {% endfor %}
         </ul>
 

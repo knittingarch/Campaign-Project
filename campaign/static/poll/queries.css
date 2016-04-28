@@ -1,0 +1,144 @@
+/* 905px or smaller */
+@media only screen and (max-width: 905px) {
+
+div.poll-question {
+    width: 80%;
+    font-size: 95%;
+}
+
+}  /* closes the media tag */
+
+
+/* 750px or smaller */
+@media only screen and (max-width: 750px) {
+
+div.section.group.intro .yes.giant-icon {
+    font-size: 600%;
+}
+
+div.section.group.intro h1 {
+    font-size: 250%;
+}
+
+div.section.group.results h1 {
+    font-size: 250%;
+}
+
+}  /* closes the media tag */
+
+
+/* 675px or smaller */
+@media only screen and (max-width: 675px) {
+
+div.section.group.intro h1 {
+    font-size: 250%;
+}
+
+div.section.group.intro p {
+    font-size: 85%;
+    line-height: 145%;
+}
+
+div.section.group.intro .yes.giant-icon {
+    font-size: 600%;
+}
+
+div.poll-question {
+    width: 85%;
+    font-size: 90%;
+    margin-top: 40px;
+}
+
+div.poll-question form.poll-options {
+    width: 65%;
+    margin: 0 auto;
+}
+
+}  /* closes the media tag */
+
+
+/* 580px or smaller */
+@media only screen and (max-width: 580px) {
+
+div.col.span_1_of_6 {
+    width: 31.70%; /* changes this to a 1_of_4 grid */
+}
+
+div.section.group.intro h1 {
+    font-size: 200%;
+}
+
+div.section.group.results h1 {
+    font-size: 200%;
+}
+
+div.section.group.poll div.poll-question h2.poll-header {
+    font-size: 180%;
+    }
+
+}  /* closes the media tag */
+
+
+/* 530px or smaller */
+@media only screen and (max-width: 530px) {
+
+div.section.group.pairs .col.span_1_of_3 {
+    width: 100%;
+}
+
+div.poll-question {
+    width: 94%;
+    font-size: 80%;
+    margin-top: 35px;
+}
+
+div.poll-question form.poll-options {
+    width: 70%;
+    margin: 0 auto;
+}
+
+div.section.group.poll div.poll-question h2.poll-header {
+    font-size: 170%;
+    }
+
+div.section.group.results {
+    padding-bottom: 35px;
+}
+
+div.section.group.results h1 {
+    font-size: 160%;
+    margin-bottom: 10px;
+}
+
+div.section.group.results ul.results-list {
+    margin-left: 40px;
+}
+
+div.section.group.results ul.results-list li {
+    font-size: 90%;
+}
+
+}  /* closes the media tag */
+
+
+/* 400px or smaller */
+@media only screen and (max-width: 400px) {
+
+div.col.span_1_of_6 {
+    width: 49.2%;  /* changes this to a 1_of_4 grid */
+}
+
+div.section.group.intro h1 {
+    font-size: 150%;
+}
+
+div.section.group.intro p {
+    padding-top: 35px;
+}
+
+div.poll-question form.poll-options {
+    width: 75%;
+    margin: 0 auto;
+}
+
+}  /* closes the media tag */

@@ -168,6 +168,11 @@ nav ul.menu li {
     text-align: justify;
 }
 
+.intro h1 {
+    background-color: #c0392b;
+    width: 100%;
+    }
+
 
 div.pairs {
     width: 90%;
@@ -368,10 +373,35 @@ form.poll-options {
 
 /*  RESULTS Page  */
 
-ul.results {
-    margin: 0 auto;
+div.section.group.results h1 {
+    background-color: #34495e;
+    width: 100%;
 }
 
-ul.results li {
-    line-height: 145%;
+.results {
+    position: relative;
+    background-color: #c0392b;
+    color: #eee;
+    padding: 5px;
+    }
+
+
+ul.results-list {
+    list-style-type: none;
+    margin-left: 75px;
+
 }
+
+ul.results-list li {
+    line-height: 250%;
+}
+
+ul.results-list a.check {
+    margin-right: 10px;
+}
+
+.highlight {
+    font-weight: 600;
+    border-bottom: 2px solid;
+    margin-left: 10px;
+    }
