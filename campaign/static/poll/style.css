@@ -51,6 +51,7 @@ a:link, a:visited {
     letter-spacing: 1px;
     padding: 5px;
     color: #555;
+    -webkit-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -193,6 +194,7 @@ div.pairs ul li {
 
 div.pairs ul li a:link, div.pairs ul li a:visited {
     color: #fff;
+    -webkit-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -252,6 +254,7 @@ form.poll-options {
     text-transform: uppercase;
     background-color: #fff;
     color: #34495e;
+    -webkit-transition: background-color 0.1s, color 0.1s;
     transition: background-color 0.1s, color 0.1s;
     margin: 0 auto;
 }
@@ -289,7 +292,7 @@ form.poll-options {
 /*  CRITERIA BOX Section  */
 
 .criteria-box {
-    display: none;
+/*    display: none;  */
     position: absolute;
     top: 0;
     left: 0;
@@ -300,14 +303,19 @@ form.poll-options {
     background-color: #333;
     font-size: 85%;
     color: #ddd;
-    opacity: 0.5;
     overflow: hidden;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0s, opacity 0.5s linear;
     }
 
 #fly:hover + .criteria-box {
-    display: block;
+/*     display: block; */
+    visibility: visible;
+    opacity: 0.5;
 }
 
 .criteria-box h3 {
