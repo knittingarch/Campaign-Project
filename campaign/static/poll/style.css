@@ -32,6 +32,12 @@ html {
 }
 
 @font-face {
+    font-family: ChunkFive;
+    src: url(Chunkfive.otf);
+}
+
+
+@font-face {
     font-family: JosefinSans;
     src: url(JosefinSans-Regular.ttf);
 }
@@ -64,7 +70,14 @@ a:hover, a:active {
 
 /*  HEADERS  */
 
-h1, h2, h3, h4, h5 {
+h1 {
+    font-family: ChunkFive;
+    line-height: 155%;
+    padding-left: 25px;
+    letter-spacing: 1px;
+}
+
+h2, h3, h4, h5 {
     font-family: JosefinSlab;
     line-height: 155%;
     padding-left: 25px;
@@ -73,6 +86,7 @@ h1, h2, h3, h4, h5 {
 
 h1 {
     font-size: 300%;
+    font-weight: 600;
 }
 
 h2 {
@@ -292,14 +306,13 @@ form.poll-options {
 /*  CRITERIA BOX Section  */
 
 .criteria-box {
-/*    display: none;  */
     position: absolute;
     top: 0;
     left: 0;
     width: 25%;
     height: auto;
     padding: 20px 50px 20px 15px;
-    margin-top: 10px;
+    margin-top: 95px;
     background-color: #333;
     font-size: 85%;
     color: #ddd;
@@ -313,7 +326,6 @@ form.poll-options {
     }
 
 #fly:hover + .criteria-box {
-/*     display: block; */
     visibility: visible;
     opacity: 0.5;
 }

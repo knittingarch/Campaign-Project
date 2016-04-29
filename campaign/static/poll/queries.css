@@ -1,27 +1,39 @@
 /* 905px or smaller */
 @media only screen and (max-width: 905px) {
 
+div.criteria-box {
+    margin-top: 0px;
+    width: 100%;
+    border-radius: 0px;
+    }
+
+.criteria-box ul {
+    display: inline-block;
+    }
+
 div.poll-question {
     width: 80%;
     font-size: 95%;
 }
 
+#fly:hover {
+    margin-top: 185px;
+    -webkit-transition: margin-top 0.5s;
+    transition: margin-top 0.5s;
+}
+
 }  /* closes the media tag */
 
 
-/* 750px or smaller */
-@media only screen and (max-width: 750px) {
+/* 765px or smaller */
+@media only screen and (max-width: 765px) {
 
 div.section.group.intro .yes.giant-icon {
     font-size: 600%;
 }
 
-div.section.group.intro h1 {
-    font-size: 250%;
-}
-
-div.section.group.results h1 {
-    font-size: 250%;
+div.section.group.intro h1, div.section.group.results h1 {
+    font-size: 245%;
 }
 
 }  /* closes the media tag */
@@ -30,8 +42,8 @@ div.section.group.results h1 {
 /* 675px or smaller */
 @media only screen and (max-width: 675px) {
 
-div.section.group.intro h1 {
-    font-size: 250%;
+div.section.group.intro h1, div.section.group.results h1 {
+    font-size: 235%;
 }
 
 div.section.group.intro p {
@@ -57,6 +69,20 @@ div.poll-question form.poll-options {
 }  /* closes the media tag */
 
 
+/* 615px or smaller */
+@media only screen and (max-width: 615px) {
+
+#fly:hover {
+    margin-top: 211px;
+}
+
+div.section.group.intro h1, div.section.group.results h1 {
+    font-size: 222%;
+}
+
+}  /* closes the media tag */
+
+
 /* 580px or smaller */
 @media only screen and (max-width: 580px) {
 
@@ -64,11 +90,7 @@ div.col.span_1_of_6 {
     width: 31.70%; /* changes this to a 1_of_4 grid */
 }
 
-div.section.group.intro h1 {
-    font-size: 200%;
-}
-
-div.section.group.results h1 {
+div.section.group.intro h1, div.section.group.results h1 {
     font-size: 200%;
 }
 
@@ -81,6 +103,10 @@ div.section.group.poll div.poll-question h2.poll-header {
 
 /* 530px or smaller */
 @media only screen and (max-width: 530px) {
+
+div.section.group.intro h1, div.section.group.results h1 {
+    font-size: 175%;
+}
 
 div.section.group.pairs .col.span_1_of_3 {
     width: 100%;
@@ -106,7 +132,6 @@ div.section.group.results {
 }
 
 div.section.group.results h1 {
-    font-size: 160%;
     margin-bottom: 10px;
 }
 
@@ -121,15 +146,21 @@ div.section.group.results ul.results-list li {
 }  /* closes the media tag */
 
 
+/* 480px or smaller */
+@media only screen and (max-width: 480px) {
+
+div.section.group.intro h1, div.section.group.results h1 {
+    font-size: 142%;
+}
+
+}  /* closes the media tag */
+
+
 /* 400px or smaller */
 @media only screen and (max-width: 400px) {
 
 div.col.span_1_of_6 {
     width: 49.2%;  /* changes this to a 1_of_4 grid */
-}
-
-div.section.group.intro h1 {
-    font-size: 150%;
 }
 
 div.section.group.intro p {
@@ -139,6 +170,10 @@ div.section.group.intro p {
 div.poll-question form.poll-options {
     width: 75%;
     margin: 0 auto;
+}
+
+#fly:hover {
+    margin-top: 260px;
 }
 
 }  /* closes the media tag */
