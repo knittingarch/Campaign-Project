@@ -96,6 +96,7 @@ div.section.group.intro h1, div.section.group.results h1 {
 
 div.section.group.poll div.poll-question h2.poll-header {
     font-size: 180%;
+    padding: 10px;
     }
 
 }  /* closes the media tag */
@@ -163,6 +164,10 @@ div.col.span_1_of_6 {
     width: 49.2%;  /* changes this to a 1_of_4 grid */
 }
 
+div.section.group.intro h1, div.section.group.results h1 {
+    font-size: 130%;
+}
+
 div.section.group.intro p {
     padding-top: 35px;
 }
@@ -174,6 +179,35 @@ div.poll-question form.poll-options {
 
 #fly:hover {
     margin-top: 260px;
+}
+
+}  /* closes the media tag */
+
+
+/* 375px or smaller */
+@media only screen and (max-width: 375px) {
+
+div.section.group.intro h1, div.section.group.results h1 {
+    font-size: 125%;
+}
+
+div.section.group.intro h1 {
+    text-align: center;
+}
+
+div.poll-question form.poll-options {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#fly:hover {
+    margin-top: 300px;
+    -webkit-transition: margin-top 0.5s;
+    transition: margin-top 0.5s;
+}
+
+div.section.group.candidates h2{
+    font-size: 180%;
 }
 
 }  /* closes the media tag */
