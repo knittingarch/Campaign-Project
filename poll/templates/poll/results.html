@@ -45,7 +45,7 @@
         <h1>Campaign Results</h1>
 
         <ul class="results-list">
-            {% for choice in question.choice_set.all %}
+            {% for choice in question.choice_set.all|dictsort:"choice_text" %}
             <li>{{ choice.choice_text }}:
                 <span class="highlight">{{ choice.votes }} vote{{ choice.votes|pluralize }}</span>
                 {% if choice.votes == winner %}<a class="check ion-checkmark"></a>{% endif %}</li>
