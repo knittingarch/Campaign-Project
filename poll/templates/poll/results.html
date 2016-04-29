@@ -46,16 +46,13 @@
 
         <ul class="results-list">
             {% for choice in question.choice_set.all %}
-            {% comment %}{% if %}
-            <li><a class="check ion-checkmark"></a>{{ choice.choice_text }}:  <span class="highlight">{{ choice.votes }} vote{{ choice.votes|pluralize }}</span></li>
-            {% else %}{% endcomment %}
-            <li>{{ choice.choice_text }}:  <span class="highlight">{{ choice.votes }} vote{{ choice.votes|pluralize }}</span></li>
+            <li>{{ choice.choice_text }}:
+                <span class="highlight">{{ choice.votes }} vote{{ choice.votes|pluralize }}</span>
+                {% if choice.votes == winner %}<a class="check ion-checkmark"></a>{% endif %}</li>
             {% endfor %}
         </ul>
-
+        <p><a class="button" href="{% url 'detail' question.id %}">Return to Project</a></p>
     </div>
-
-{% comment %}<a href="{% url 'detail' question.id %}">Vote again?</a>{% endcomment %}
 
     </body>
 </html>

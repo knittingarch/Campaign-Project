@@ -1,6 +1,7 @@
 
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect, HttpResponse
+from django.db.models import Max, Count
+from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 
 from .models import Choice, Question
@@ -34,4 +35,9 @@ def vote(request, question_id):
 
 def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'poll/results.html', {'question': question})
+    trial = question.choice_set.aggregate(Max('votes'))
+    winner = trial.items()[0][1]
+    return render(request, 'poll/results.html', {
+        'question': question,
+        'winner': winner,
+    })

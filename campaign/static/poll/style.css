@@ -422,7 +422,7 @@ div.section.group.results h1 {
 ul.results-list {
     list-style-type: none;
     margin-left: 75px;
-
+    margin-bottom: 25px;
 }
 
 ul.results-list li {
@@ -430,7 +430,7 @@ ul.results-list li {
 }
 
 ul.results-list a.check {
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .highlight {
@@ -438,3 +438,17 @@ ul.results-list a.check {
     border-bottom: 2px solid;
     margin-left: 10px;
     }
+
+a.button {
+    background-color: #eee;
+    width: 100px;
+    margin-left: 50px;
+    color: #aaa;
+    font-size: 75%;
+    text-transform: lowercase;
+    border-radius: 4px;
+}
+
+a.button:hover {
+    color: #34495e;
+}
