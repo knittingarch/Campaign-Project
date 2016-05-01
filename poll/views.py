@@ -1,7 +1,7 @@
 
 from django.core.urlresolvers import reverse
-from django.db.models import Max, Count
-from django.http import HttpResponseRedirect
+from django.db.models import Max
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, render
 
 from .models import Choice, Question
@@ -20,6 +20,11 @@ def detail(request, question_id):
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
+    if request.session.get('has_voted', False):
+        return render(request, 'poll/detail.html', {
+            'question': question,
+            'error_message': ("You've already voted."),
+            })
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
@@ -30,6 +35,7 @@ def vote(request, question_id):
     else:
         selected_choice.votes += 1
         selected_choice.save()
+        request.session['has_voted'] = True
         return HttpResponseRedirect(reverse('results', args=(question.id,)))
 
 

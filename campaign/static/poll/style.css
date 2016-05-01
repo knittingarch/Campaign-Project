@@ -452,3 +452,11 @@ a.button {
 a.button:hover {
     color: #34495e;
 }
+
+/* ERRORS */
+
+.error {
+	color: #c0392b;
+	font-weight: 600;
+	text-align: center;
+}
