@@ -60,7 +60,12 @@ MIDDLEWARE_CLASSES = [
 #         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
 #     }
 # }
-# SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+
+
+# Session Caching to DB
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+
 
 ROOT_URLCONF = 'campaign.urls'
 
