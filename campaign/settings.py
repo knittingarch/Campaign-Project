@@ -55,12 +55,12 @@ MIDDLEWARE_CLASSES = [
 
 # Session Caching to DB
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-        'LOCATION': 'my_cache_table',
-    }
-}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+#         'LOCATION': 'my_cache_table',
+#     }
+# }
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
