@@ -53,18 +53,17 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# Cache Settings
-
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-#     }
-# }
-
-
 # Session Caching to DB
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'my_cache_table',
+    }
+}
+
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+
 
 
 ROOT_URLCONF = 'campaign.urls'
